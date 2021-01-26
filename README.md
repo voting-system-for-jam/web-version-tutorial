@@ -7,10 +7,7 @@ HTML/CSS (SCSS)
 JavaScript
 
 ### バックエンド：
-Python
-
-### インフラ
-Firebase
+Python (Django)
 
 ### 環境構築:
 Docker
