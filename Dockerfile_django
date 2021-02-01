@@ -5,6 +5,7 @@ RUN apt-get -y update \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python3 get-pip.py \
     && pip install -U pip \
+    && pip install psycopg2-binary \
     && mkdir /code \
     && rm -rf /var/lib/apt/lists/* \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
@@ -17,6 +18,6 @@ RUN pip install -r requirements.txt
 # サーバーを立てる場所に移動
 WORKDIR /web-version/mysite
 # これでbashとか使わずにrunするだけでサーバーが立つ
-CMD  python3 manage.py runserver 0:8000 
+CMD  python3 manage.py runserver 0:8000
 
 # EXPOSE 8000
